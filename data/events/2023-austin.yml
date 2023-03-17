@@ -175,16 +175,16 @@ sponsors_accepted : "yes" # Whether you want "Become a XXX Sponsor!" link
 sponsor_levels:
   - id: happyhour
     label: Happy Hour
-    max: 0
-  - id: platinum
-    label: Platinum
-    max: 0
-  - id: gold
-    label: Gold
-    max: 0
-  - id: lanyard
-    label: Lanyard
-    max: 0
-  - id: coffee
-    label: Coffee Bar
-    max: 0
+    max: 4
+#  - id: platinum
+#    label: Platinum
+#    max: 0
+#  - id: gold
+#    label: Gold
+#    max: 0
+#  - id: lanyard
+#    label: Lanyard
+#    max: 0
+#  - id: coffee
+#    label: Coffee Bar
+#    max: 0
