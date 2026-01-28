@@ -16,7 +16,7 @@ main:
     weight: -120
     identifier: speaking
   - name: organizing
-    url: /organizing
+    url: /guide
     weight: -110
     identifier: organizing
   - name: about

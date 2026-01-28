@@ -51,6 +51,7 @@ languages:
 
 permalinks:
   page: /:contentbasename/
+  organizing-guide: /guide/:contentbasename/
   blog: /blog/:year/:month/:day/:title/
   speaking: /:contentbasename/
 

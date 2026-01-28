@@ -684,3 +684,23 @@ h3.program-page {
 .small-table-text {
   font-size: 0.75rem;
 }
+
+// Guide Styling
+
+.breadcrumb {
+  align-items: anchor-center;
+  flex-direction: column;
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: end;
+  }
+  li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 0.25rem;
+    content: ">";
+  }
+}

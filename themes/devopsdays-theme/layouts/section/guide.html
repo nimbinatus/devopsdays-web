@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Organizing Guide</h1>
+    <div>
+      <ol>
+      {{- range .Pages -}}
+         {{ .Render "summary" }}
+      {{- end -}}
+      </ol>
+    </div>
+  </div>
+</div>
+
+{{ end }}

@@ -1,0 +1,68 @@
+{{- define "main" -}}
+
+<h1>{{- .Title -}}</h1>
+{{- if isset .Params "author" -}}
+  <small>by {{- .Params.author -}} - {{- dateFormat "02 January, 2006" .Date -}}</small>
+{{- else -}}
+  <small>{{- dateFormat "02 January, 2006" .Date -}}</small>
+{{- end -}}
+
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <ol>
+    {{ range .Ancestors.Reverse }}
+      {{ if .IsHome }}
+      {{ else }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      </li>
+      {{ end }}
+    {{ end }}
+    <li class="active">
+      <a aria-current="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    </li>
+  </ol>
+  <br/>
+  <p>
+    {{- with .PrevInSection -}}<a href="{{- .RelPermalink -}}"><<&nbsp;Previous&nbsp;-&nbsp;{{- .LinkTitle -}}</a>{{- end -}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{- with .NextInSection -}}<a href="{{- .RelPermalink -}}">Next&nbsp;-&nbsp;{{- .LinkTitle -}}&nbsp;>></a>{{- end -}}
+  </p>
+</nav>
+{{- .Content -}}
+<div id="share"></div>
+<div class="row">
+  <!-- pager begin -->
+  <div class="col-md-12">
+    <nav>
+      <ul class="pagination">
+        {{- if .PrevInSection -}}
+          <li class="page-item">
+            <a href="{{.PrevInSection.Permalink}}" class="page-link">
+              <span aria-hidden="true">&larr;</span>
+              Previous</a>
+          </li>
+          {{- else -}}
+          <li class="page-item disabled">
+            <a href="#" class="page-link">
+              <span aria-hidden="true">&larr;</span>
+              Previous</a>
+          </li>
+        {{- end -}}
+        {{- if .NextInSection -}}
+          <li class="page-item">
+            <a href="{{.NextInSection.Permalink}}" class="page-link">Next
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          {{- else -}}
+          <li class="page-item disabled">
+            <a href="#" class="page-link">Next
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        {{- end -}}
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- pager end -->
+
+{{- end -}}
