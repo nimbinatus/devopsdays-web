@@ -6,7 +6,17 @@
     <div>
       <ol>
       {{- range .Pages -}}
+        {{- if .IsNode -}}
+          <li><a href='{{ .Permalink }}'> {{ .Title }}</a>
+            <ol>
+              {{- range .Pages -}}
+                {{ .Render "summary" }}
+              {{- end -}}
+            </ol>
+          </li>
+        {{- else -}}
          {{ .Render "summary" }}
+        {{- end -}}
       {{- end -}}
       </ol>
     </div>

@@ -1,7 +1,7 @@
 +++
 weight = 22
 date = "2023-11-06T23:40:47-06:00"
-title = "Evening Event"
+title = "Hosting an Evening Event"
 aliases = []
 +++
 
