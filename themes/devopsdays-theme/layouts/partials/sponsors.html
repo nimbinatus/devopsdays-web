@@ -58,8 +58,8 @@
         {{- if $e.sponsors -}}
           <div class="row sponsor-row">
           {{- range where $e.sponsors "level" $level.id -}}
-            {{- $s := index site.Data.sponsors .id -}}
-            {{- if index site.Data.sponsors .id -}}
+            {{- $s := index hugo.Data.sponsors .id -}}
+            {{- if index hugo.Data.sponsors .id -}}
               {{- $sponsorURL := $s.url -}}
               {{- with .url -}}
                 {{- $sponsorURL = . -}}

@@ -1,6 +1,6 @@
 {
   "name": "devopsdays-web",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "The website for devopsdays.org",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/devopsdays/devopsdays-web.git"
   },
-  "author": "Matt Stratton",
+  "author": "Laura Santamaria",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/devopsdays/devopsdays-web/issues"

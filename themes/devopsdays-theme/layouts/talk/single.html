@@ -180,7 +180,7 @@
   {{- end -}}
   {{- else -}}
     <h2 class="talk-page">Speaker</h2>
-    {{- range $fname, $s := index site.Data.speakers (strings.TrimRight "\n" $e.year) (substr $e.name 5) -}}
+    {{- range $fname, $s := index hugo.Data.speakers (strings.TrimRight "\n" $e.year) (substr $e.name 5) -}}
       {{- if in ($.LinkTitle | urlize) $fname -}}
         <div class="row">
           <div class="col-md-12">

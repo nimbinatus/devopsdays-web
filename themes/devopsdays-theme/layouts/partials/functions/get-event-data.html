@@ -7,11 +7,11 @@
 {{- if $slug -}}
   {{- $year := (index (split $slug "-" ) 0) -}}
   {{- $city := substr $slug 5 -}}
-  {{- $e = index site.Data.events $year $city "main" -}}
+  {{- $e = index hugo.Data.events $year $city "main" -}}
   {{- if $e -}}
-    {{- $p := index site.Data.events $year $city "program" -}}
-    {{- $s := index site.Data.events $year $city "sponsors" -}}
-    {{- $o := index site.Data.events $year $city "organizers" -}}
+    {{- $p := index hugo.Data.events $year $city "program" -}}
+    {{- $s := index hugo.Data.events $year $city "sponsors" -}}
+    {{- $o := index hugo.Data.events $year $city "organizers" -}}
     {{- if fileExists (printf "/data/events/%s/%s/program.yml" $year $city) -}} 
       {{- $e = merge $p $e -}}
     {{- end -}}

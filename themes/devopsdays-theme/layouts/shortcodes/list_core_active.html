@@ -1,6 +1,6 @@
 <em>Active</em><br>
-{{- $len := len site.Data.core.active -}}
-{{- range $index, $organizer := site.Data.core.active -}}
+{{- $len := len hugo.Data.core.active -}}
+{{- range $index, $organizer := hugo.Data.core.active -}}
   {{- if ne (math.Add $index 1) $len -}}
     {{ $organizer }},&nbsp;
   {{- else -}}

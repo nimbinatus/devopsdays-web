@@ -1,6 +1,6 @@
 <em>Advisory</em><br>
-{{- $len := len site.Data.core.advisory -}}
-{{- range $index, $organizer := site.Data.core.advisory -}}
+{{- $len := len hugo.Data.core.advisory -}}
+{{- range $index, $organizer := hugo.Data.core.advisory -}}
   {{- if ne (math.Add $index 1) $len -}}
     {{ $organizer }},&nbsp;
   {{- else -}}

@@ -1,6 +1,6 @@
 <em>Emeritus</em><br>
-{{- $len := len site.Data.core.emeritus -}}
-{{- range $index, $organizer := site.Data.core.emeritus -}}
+{{- $len := len hugo.Data.core.emeritus -}}
+{{- range $index, $organizer := hugo.Data.core.emeritus -}}
   {{- if ne (math.Add $index 1) $len -}}
     {{ $organizer }},&nbsp;
   {{- else -}}
