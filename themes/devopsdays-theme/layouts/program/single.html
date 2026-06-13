@@ -11,7 +11,7 @@
 
   {{- $e := partial "functions/get-event-data" . -}}
 
-  {{- $p := index $.Site.Data.events (index (split (.Permalink | relURL) "/") 2) "program" -}}
+  {{- $p := index $.Site.Data.events (index (split (.Permalink | relURL) "/") 3) "program" -}}
 
 
 {{ if eq $p nil }}

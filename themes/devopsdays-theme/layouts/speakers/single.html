@@ -56,7 +56,13 @@
               {{- if where (os.ReadDir $assetspeakersfolder) "Name" $fname -}}
                 {{- $imagelocation := printf "events/%s/speakers/%s" $e.name $fname -}}
                 {{- $imageresource := resources.Get $imagelocation -}}
-                {{- $imagefile := $imageresource.Fit "600x600 webp Lanczos q100" -}}
+                {{- if eq $imageresource.MediaType.MainType "image" -}}
+                    {{- if $imageresource.MediaType.SubType "png" -}}
+                      {{- $imagefile := $imageresource.Fit "600x600" -}}
+                    {{- else -}}
+                      {{- $imagefile := $imageresource.Fit "600x600 webp Lanczos q100" -}}
+                    {{- end -}}
+                {{- end -}}
                 <img src='{{ $imagefile.RelPermalink }}' class="speakers-page old-speaker" alt="{{ $s.name }}"/><br />
               {{- end -}}
             {{- else -}}

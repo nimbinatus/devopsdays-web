@@ -1,12 +1,12 @@
-{{- $slug := (index (split ($.Page.Permalink | relURL) "/") 2) -}}
+{{- $slug := (index (split ($.Page.Permalink | relURL) "/") 3) -}}
 {{- if not $slug -}}
   {{- $pathParts := split $.Page.File.Dir "/" -}}
   {{- $slug = index $pathParts 1 -}}
 {{- end -}}
 {{- $e := dict -}}
 {{- if $slug -}}
-  {{- $year := (index (split $slug "-" ) 0) -}}
-  {{- $city := substr $slug 5 -}}
+  {{- $year := (index (.Ancestors.Reverse) 0) -}}
+  {{- $city := .CurrentSection -}}
   {{- $e = index hugo.Data.events $year $city "main" -}}
   {{- if $e -}}
     {{- $p := index hugo.Data.events $year $city "program" -}}
